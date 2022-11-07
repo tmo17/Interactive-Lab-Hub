@@ -186,13 +186,19 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
 
-* A few considerations we had while building the system were 1) how would users know to enter the password?  This would require signage however we may actually want to keep it as a student secret so as random people touching it does not ruin it 2)  Could people remeber a password? Therefor we kept it short to only 3 numbers 4) What would be the best way to enter the information.  We considered the rotary encoder however this we found to be more confusing on knowing what each excat number was on the dial so ultimately went with the button 5)  What is the best way
+* A few considerations we had while building the system were 
+  1) how would users know to enter the password?  This would require signage however we may actually want to keep it as a student secret so as random people touching it does not ruin it 
+  2)  Could people remeber a password? Therefor we kept it short to only 3 numbers 
+  3)  What would be the best way to enter the information.  We considered the rotary encoder however this we found to be more confusing on knowing what each excat number was on the dial so ultimately went with the button 
 
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
 
 *Reflection*
-  On reflection I think our system would have worked well however was met with a couple limitations.  1) How to power the pi in a non-descript way.  We found it very difficult to find a plug close enough to the door for the pi that made it clear the lock was related to the door 2) How would people want to be alerted?  Testing vocally was disruptive and would likely be especially disruptive if consistenlty used. However we also found a light may not be noticed.  Potentially using something like vibration could work better for personal notification while a large light would be better for full room notification.   3)  How else could we leverage using network affects?  Could we somehow leverage multiple rooms with this feature ? 
+  On reflection I think our system would have worked well however was met with a couple limitations.  
+  1) How to power the pi in a non-descript way.  We found it very difficult to find a plug close enough to the door for the pi that made it clear the lock was related to the door 
+  2) How would people want to be alerted?  Testing vocally was disruptive and would likely be especially disruptive if consistenlty used. However we also found a light may not be noticed.  Potentially using something like vibration could work better for personal notification while a large light would be better for full room notification.   
+  3) How else could we leverage using network affects?  Could we somehow leverage multiple rooms with this feature ? 
 
 <!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
 
