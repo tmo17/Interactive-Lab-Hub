@@ -183,9 +183,9 @@ Find at least one class (more are okay) partner, and design a distributed applic
 3.	Message is sent over the network and posted to channel IDD/Pass with the value of the last sensor hit
 
 *Receiving and output*
-4.	Messages are received and a rolling password value is calculated based on the last 3 values inputted.  This value is then checked against a stored password value to verify the user
-5.	If the user is verified, a voice and terminal message print and play from the Pi to early the user of someone at the door
-6.	The user is alerted and able to go let their classmate inside!
+ * Messages are received and a rolling password value is calculated based on the last 3 values inputted.  This value is then checked against a stored password value to verify the user
+ * If the user is verified, a voice and terminal message print and play from the Pi to early the user of someone at the door
+ * The user is alerted and able to go let their classmate inside!
 
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
 
