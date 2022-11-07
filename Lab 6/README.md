@@ -167,9 +167,9 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
 
-•	For our design, we created a password protected doorbell, that alerts students in Tata laboratory that a student is at the door without a card.  This is a useful device as the receiver will only alert students if the password is correctly entered into the system.
-•	The design works by sending messages from one input raspberry pi using the capacitive touch sensors which is then read and verified by a receiving pi.  The pi will then alert users if they should go get the door
-•	A normal doorbell would ring regardless of who pushes it which may lead helpful students to let bad actors inside and needlessly alert students that a non-classmate may be at the door.  By adding a password protection, it ensures students will only be notified to help a verified user into the space.  The networking also enables it to be pushed out to many students and potentially customized by password and groups for quick notifications to other students throughout campus.
+* For our design, we created a password protected doorbell, that alerts students in Tata laboratory that a student is at the door without a card.  This is a useful device as the receiver will only alert students if the password is correctly entered into the system.
+* The design works by sending messages from one input raspberry pi using the capacitive touch sensors which is then read and verified by a receiving pi.  The pi will then alert users if they should go get the door
+*	A normal doorbell would ring regardless of who pushes it which may lead helpful students to let bad actors inside and needlessly alert students that a non-classmate may be at the door.  By adding a password protection, it ensures students will only be notified to help a verified user into the space.  The networking also enables it to be pushed out to many students and potentially customized by password and groups for quick notifications to other students throughout campus.
 
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
 ![image](https://user-images.githubusercontent.com/112022260/200413165-34c319df-b79b-4e27-8c54-66c1986b5dc4.png)
@@ -178,6 +178,7 @@ Find at least one class (more are okay) partner, and design a distributed applic
 1.	User inputs a password to lockout box if they have forgotten their ID to Tata by pressing the capacitive touch sensors.
 2.	The capacitive touch sensor value is converted to strings and packaged in a message
 3.	Message is sent over the network and posted to channel IDD/Pass with the value of the last sensor hit
+
 *Receiving and output*
 4.	Messages are received and a rolling password value is calculated based on the last 3 values inputted.  This value is then checked against a stored password value to verify the user
 5.	If the user is verified, a voice and terminal message print and play from the Pi to early the user of someone at the door
