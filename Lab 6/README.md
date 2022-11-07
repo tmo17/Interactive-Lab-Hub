@@ -1,6 +1,6 @@
 # Little Interactions Everywhere
 
-**NAMES OF COLLABORATORS HERE**
+**Trevor Morcott, Carlos Ponce**
 
 ## Prep
 
@@ -95,6 +95,13 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
+![IMG-0074](https://user-images.githubusercontent.com/112022260/200412158-2dc2b559-9c3a-4be5-b8b8-500d2232a169.jpg)
+![IMG-0075](https://user-images.githubusercontent.com/112022260/200412166-c90cf81a-a9d6-4a39-9670-68a389b8d160.jpg)
+![Picture1](https://user-images.githubusercontent.com/112022260/200412246-1102bcd1-c2a6-43c1-92bf-e2cca9acbb87.png)
+
+Idea 4: Use the camera and an Open CV library to detect how many people are in line at the Cafe.  Rhe pi running the Open CV recognition algorithmn will continuously send a message to a specific channel with the number of people in line.  A light would be set up in Tata as either green or red that would change depending on wether it was a good time to go the Cafe or not (<3 people in line) 
+
+Idea 5:  Plant watering system.  One central pi, would be connected to the internet and have a log of all plant watering times and schedules.  Each plant would have a recieving pi that is attached to a water dispenser.  The user could interect and set watering through the central pi that could then push out messages to each plant with a customized watering schedule for that plant based on weather, humidity and other factors.  Whenever a message would be sent, the recieving pi would interpret what plant the message was sent about and how much water it send to put in.  If the pi is attached to a plant of that type it will release the speciefed amount.
 
 ### Part C
 ### Streaming a Sensor
@@ -116,6 +123,7 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
  ```
 
 **\*\*\*Include a picture of your setup here: what did you see on MQTT Explorer?\*\*\***
+<img width="759" alt="IDD_MQT" src="https://user-images.githubusercontent.com/112022260/200413067-01bab0e9-e8bc-475e-8738-4570f21d1dfe.PNG">
 
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
@@ -159,11 +167,31 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
 
+•	For our design, we created a password protected doorbell, that alerts students in Tata laboratory that a student is at the door without a card.  This is a useful device as the receiver will only alert students if the password is correctly entered into the system.
+•	The design works by sending messages from one input raspberry pi using the capacitive touch sensors which is then read and verified by a receiving pi.  The pi will then alert users if they should go get the door
+•	A normal doorbell would ring regardless of who pushes it which may lead helpful students to let bad actors inside and needlessly alert students that a non-classmate may be at the door.  By adding a password protection, it ensures students will only be notified to help a verified user into the space.  The networking also enables it to be pushed out to many students and potentially customized by password and groups for quick notifications to other students throughout campus.
+
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
+![image](https://user-images.githubusercontent.com/112022260/200413165-34c319df-b79b-4e27-8c54-66c1986b5dc4.png)
+
+*Input and sending*
+1.	User inputs a password to lockout box if they have forgotten their ID to Tata by pressing the capacitive touch sensors.
+2.	The capacitive touch sensor value is converted to strings and packaged in a message
+3.	Message is sent over the network and posted to channel IDD/Pass with the value of the last sensor hit
+*Receiving and output*
+4.	Messages are received and a rolling password value is calculated based on the last 3 values inputted.  This value is then checked against a stored password value to verify the user
+5.	If the user is verified, a voice and terminal message print and play from the Pi to early the user of someone at the door
+6.	The user is alerted and able to go let their classmate inside!
 
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
 
+* A few considerations we had while building the system were 1) how would users know to enter the password?  This would require signage however we may actually want to keep it as a student secret so as random people touching it does not ruin it 2)  Could people remeber a password? Therefor we kept it short to only 3 numbers 4) What would be the best way to enter the information.  We considered the rotary encoder however this we found to be more confusing on knowing what each excat number was on the dial so ultimately went with the button 5)  What is the best way
+
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
+
+
+*Reflection*
+  On reflection I think our system would have worked well however was met with a couple limitations.  1) How to power the pi in a non-descript way.  We found it very difficult to find a plug close enough to the door for the pi that made it clear the lock was related to the door 2) How would people want to be alerted?  Testing vocally was disruptive and would likely be especially disruptive if consistenlty used. However we also found a light may not be noticed.  Potentially using something like vibration could work better for personal notification while a large light would be better for full room notification.   3)  How else could we leverage using network affects?  Could we somehow leverage multiple rooms with this feature ? 
 
 <!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
 
