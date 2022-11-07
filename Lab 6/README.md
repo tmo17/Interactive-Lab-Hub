@@ -127,7 +127,8 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
 
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
 
-* Due to technical difficulties
+Please see Carlos Ponce's repo for code stored used here. Due to technical difficulties with my pi, Carlos and I executed on his Pi.  This was brought up and confirmed with Alexandra.
+
 
 ### Part D
 ### The One True ColorNet
@@ -160,6 +161,7 @@ Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
 
+Please see Carlos Ponce's repo for code stored used here. Due to technical difficulties with my pi, Carlos and I executed on his Pi.  This was brought up and confirmed with Alexandra.
 
 ### Part E
 ### Make it your own
@@ -191,6 +193,8 @@ Find at least one class (more are okay) partner, and design a distributed applic
   1) how would users know to enter the password?  This would require signage however we may actually want to keep it as a student secret so as random people touching it does not ruin it 
   2)  Could people remeber a password? Therefor we kept it short to only 3 numbers 
   3)  What would be the best way to enter the information.  We considered the rotary encoder however this we found to be more confusing on knowing what each excat number was on the dial so ultimately went with the button 
+  
+  Please see Carlos Ponce's repo for code stored used here. Due to technical difficulties with my pi, Carlos and I executed on his Pi.  This was brought up and confirmed with Alexandra.
 
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
